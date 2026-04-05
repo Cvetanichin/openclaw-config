@@ -27,7 +27,19 @@
   },
   "agents": {
     "defaults": {
-      "workspace": "C:\\Users\\cvetanichin\\.openclaw\\workspace"
+      "workspace": "C:\\Users\\cvetanichin\\.openclaw\\workspace",
+      "model": {
+        "primary": "claude-cli/claude-sonnet-4-6"
+      },
+      "models": {
+        "claude-cli/claude-sonnet-4-6": {}
+      },
+      "cliBackends": {
+        "claude-cli": {
+          "command": "C:\\Users\\cvetanichin\\.local\\bin\\claude.exe"
+        }
+      },
+      "sandbox": { "mode": "off" }
     }
   },
   "session": {
