@@ -1,0 +1,9 @@
+credentials/
+identity/
+logs/
+*.bak
+*.bak.*
+update-check.json
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

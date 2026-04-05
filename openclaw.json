@@ -1,0 +1,96 @@
+{
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "d839c3884f406ee2f729b6f0dad4f82f51db8c972a52dda5"
+    },
+    "mode": "local",
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": true
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-03T07:47:28.259Z",
+    "lastRunVersion": "2026.4.2",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.2",
+    "lastTouchedAt": "2026-04-03T07:47:40.738Z"
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "C:\\Users\\cvetanichin\\.openclaw\\workspace"
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding",
+    "web": {
+      "search": {
+        "provider": "gemini",
+        "enabled": true
+      }
+    }
+  },
+  "channels": {
+    "whatsapp": {
+      "selfChatMode": true,
+      "dmPolicy": "allowlist",
+      "allowFrom": [
+        "+38977641145"
+      ],
+      "enabled": true
+    }
+  },
+  "plugins": {
+    "entries": {
+      "google": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "AIzaSyAEIunLTn1P_f3dEm4z3fpCB3A-o7t89eY"
+          }
+        }
+      }
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    },
+    "entries": {
+      "goplaces": {
+        "apiKey": "AIzaSyAEIunLTn1P_f3dEm4z3fpCB3A-o7t89eY"
+      }
+    }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "session-memory": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "boot-md": {
+          "enabled": true
+        }
+      }
+    }
+  }
+}
