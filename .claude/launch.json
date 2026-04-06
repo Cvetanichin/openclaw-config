@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "OpenClaw Gateway",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js",
+        "gateway",
+        "--port",
+        "18789"
+      ],
+      "port": 18789
+    }
+  ]
+}
