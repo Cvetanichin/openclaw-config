@@ -42,8 +42,8 @@
       "cliBackends": {
         "claude-cli": {
           "command": "C:\\Users\\cvetanichin\\.local\\bin\\claude.exe",
-          "args": ["-p", "--output-format", "json", "--permission-mode", "bypassPermissions", "--no-mcp"],
-          "resumeArgs": ["-p", "--output-format", "json", "--permission-mode", "bypassPermissions", "--no-mcp", "--resume", "{sessionId}"]
+          "args": ["-p", "--output-format", "json", "--permission-mode", "bypassPermissions"],
+          "resumeArgs": ["-p", "--output-format", "json", "--permission-mode", "bypassPermissions", "--resume", "{sessionId}"]
         }
       },
       "sandbox": { "mode": "off" }

@@ -1,18 +1,17 @@
 {
   "agent:main:main": {
     "sessionId": "fa771ea8-d884-4da3-a07e-f13e607c44b2",
-    "updatedAt": 1775221682101,
+    "updatedAt": 1775467612201,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
     "deliveryContext": {
-      "channel": "webchat",
-      "to": "heartbeat"
+      "channel": "webchat"
     },
     "lastChannel": "webchat",
     "origin": {
       "label": "heartbeat",
-      "provider": "heartbeat",
+      "provider": "webchat",
       "surface": "webchat",
       "chatType": "direct",
       "from": "heartbeat",
@@ -156,20 +155,23 @@
       ],
       "version": 0
     },
-    "lastTo": "heartbeat"
+    "status": "failed",
+    "startedAt": 1775467609797,
+    "endedAt": 1775467611973,
+    "runtimeMs": 2176
   },
   "agent:main:whatsapp:direct:+38977641145": {
     "origin": {
       "label": "+38977641145",
-      "provider": "whatsapp",
-      "surface": "whatsapp",
+      "provider": "webchat",
+      "surface": "webchat",
       "chatType": "direct",
       "from": "+38977641145",
       "to": "+38977641145",
       "accountId": "default"
     },
-    "sessionId": "ba5851c8-00b7-445e-8439-07146098b9ee",
-    "updatedAt": 1775217404635,
+    "sessionId": "5f931cac-7ff9-4b51-a1e9-3d076e51a3b4",
+    "updatedAt": 1775468256301,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -181,7 +183,7 @@
     "lastChannel": "whatsapp",
     "lastTo": "+38977641145",
     "lastAccountId": "default",
-    "sessionFile": "C:\\Users\\cvetanichin\\.openclaw\\agents\\main\\sessions\\ba5851c8-00b7-445e-8439-07146098b9ee.jsonl",
+    "sessionFile": "C:\\Users\\cvetanichin\\.openclaw\\agents\\main\\sessions\\5f931cac-7ff9-4b51-a1e9-3d076e51a3b4.jsonl",
     "skillsSnapshot": {
       "prompt": "\n\nThe following skills provide specialized instructions for specific tasks.\nUse the read tool to load a skill's file when the task matches its description.\nWhen a skill file references a relative path, resolve it against the skill directory (parent of SKILL.md / dirname of the path) and use that absolute path in tool commands.\n\n<available_skills>\n  <skill>\n    <name>clawflow</name>\n    <description>Use when work should span one or more detached tasks but still behave like one job with a single owner context. ClawFlow is the runtime substrate under authoring layers like Lobster, acpx, or plain code. Keep conditional logic in the caller; use ClawFlow for flow identity, waiting, outputs, and user-facing emergence.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>clawflow-inbox-triage</name>\n    <description>Example ClawFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>coding-agent</name>\n    <description>Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:&quot;acp&quot;), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>healthcheck</name>\n    <description>Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>mcporter</name>\n    <description>Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>node-connect</name>\n    <description>Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-creator</name>\n    <description>Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like &quot;create a skill&quot;, &quot;author a skill&quot;, &quot;tidy up a skill&quot;, &quot;improve this skill&quot;, &quot;review the skill&quot;, &quot;clean up the skill&quot;, &quot;audit the skill&quot;.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>weather</name>\n    <description>Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md</location>\n  </skill>\n</available_skills>",
       "skills": [
@@ -337,6 +339,606 @@
       ],
       "version": 0
     },
-    "compactionCount": 0
+    "compactionCount": 0,
+    "status": "failed",
+    "startedAt": 1775468254179,
+    "endedAt": 1775468256246,
+    "runtimeMs": 2067
+  },
+  "agent:main:openai:a363be09-1d2b-47dc-bfed-767c9a8b5b2a": {
+    "sessionId": "8edc21e5-4d39-4ac7-b021-65d9bb3f4b13",
+    "updatedAt": 1775468086067,
+    "skillsSnapshot": {
+      "prompt": "\n\nThe following skills provide specialized instructions for specific tasks.\nUse the read tool to load a skill's file when the task matches its description.\nWhen a skill file references a relative path, resolve it against the skill directory (parent of SKILL.md / dirname of the path) and use that absolute path in tool commands.\n\n<available_skills>\n  <skill>\n    <name>clawflow</name>\n    <description>Use when work should span one or more detached tasks but still behave like one job with a single owner context. ClawFlow is the runtime substrate under authoring layers like Lobster, acpx, or plain code. Keep conditional logic in the caller; use ClawFlow for flow identity, waiting, outputs, and user-facing emergence.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>clawflow-inbox-triage</name>\n    <description>Example ClawFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>coding-agent</name>\n    <description>Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:&quot;acp&quot;), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>gh-issues</name>\n    <description>Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>github</name>\n    <description>GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>healthcheck</name>\n    <description>Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>mcporter</name>\n    <description>Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>node-connect</name>\n    <description>Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-creator</name>\n    <description>Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like &quot;create a skill&quot;, &quot;author a skill&quot;, &quot;tidy up a skill&quot;, &quot;improve this skill&quot;, &quot;review the skill&quot;, &quot;clean up the skill&quot;, &quot;audit the skill&quot;.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>weather</name>\n    <description>Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md</location>\n  </skill>\n</available_skills>",
+      "skills": [
+        {
+          "name": "clawflow"
+        },
+        {
+          "name": "clawflow-inbox-triage"
+        },
+        {
+          "name": "coding-agent",
+          "requiredEnv": []
+        },
+        {
+          "name": "gh-issues",
+          "primaryEnv": "GH_TOKEN",
+          "requiredEnv": []
+        },
+        {
+          "name": "github",
+          "requiredEnv": []
+        },
+        {
+          "name": "healthcheck"
+        },
+        {
+          "name": "mcporter",
+          "requiredEnv": []
+        },
+        {
+          "name": "node-connect"
+        },
+        {
+          "name": "skill-creator"
+        },
+        {
+          "name": "weather",
+          "requiredEnv": []
+        }
+      ],
+      "resolvedSkills": [
+        {
+          "name": "clawflow",
+          "description": "Use when work should span one or more detached tasks but still behave like one job with a single owner context. ClawFlow is the runtime substrate under authoring layers like Lobster, acpx, or plain code. Keep conditional logic in the caller; use ClawFlow for flow identity, waiting, outputs, and user-facing emergence.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "clawflow-inbox-triage",
+          "description": "Example ClawFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "coding-agent",
+          "description": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:\"acp\"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "gh-issues",
+          "description": "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "github",
+          "description": "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "healthcheck",
+          "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "mcporter",
+          "description": "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "node-connect",
+          "description": "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "skill-creator",
+          "description": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like \"create a skill\", \"author a skill\", \"tidy up a skill\", \"improve this skill\", \"review the skill\", \"clean up the skill\", \"audit the skill\".",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "weather",
+          "description": "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather"
+          },
+          "disableModelInvocation": false
+        }
+      ],
+      "version": 0
+    },
+    "sessionFile": "C:\\Users\\cvetanichin\\.openclaw\\agents\\main\\sessions\\8edc21e5-4d39-4ac7-b021-65d9bb3f4b13.jsonl",
+    "status": "failed",
+    "startedAt": 1775468083777,
+    "abortedLastRun": false,
+    "systemSent": true,
+    "chatType": "direct",
+    "deliveryContext": {
+      "channel": "webchat"
+    },
+    "lastChannel": "webchat",
+    "origin": {
+      "provider": "webchat",
+      "surface": "webchat",
+      "chatType": "direct"
+    },
+    "compactionCount": 0,
+    "endedAt": 1775468085966,
+    "runtimeMs": 2189
+  },
+  "agent:main:openai:1e585fca-82f2-4cb4-be1a-80c3c28a0a06": {
+    "sessionId": "3a4ea81e-6054-4b9d-803d-36df3e8795ae",
+    "updatedAt": 1775423722176,
+    "skillsSnapshot": {
+      "prompt": "\n\nThe following skills provide specialized instructions for specific tasks.\nUse the read tool to load a skill's file when the task matches its description.\nWhen a skill file references a relative path, resolve it against the skill directory (parent of SKILL.md / dirname of the path) and use that absolute path in tool commands.\n\n<available_skills>\n  <skill>\n    <name>clawflow</name>\n    <description>Use when work should span one or more detached tasks but still behave like one job with a single owner context. ClawFlow is the runtime substrate under authoring layers like Lobster, acpx, or plain code. Keep conditional logic in the caller; use ClawFlow for flow identity, waiting, outputs, and user-facing emergence.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>clawflow-inbox-triage</name>\n    <description>Example ClawFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>coding-agent</name>\n    <description>Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:&quot;acp&quot;), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>healthcheck</name>\n    <description>Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>mcporter</name>\n    <description>Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>node-connect</name>\n    <description>Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-creator</name>\n    <description>Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like &quot;create a skill&quot;, &quot;author a skill&quot;, &quot;tidy up a skill&quot;, &quot;improve this skill&quot;, &quot;review the skill&quot;, &quot;clean up the skill&quot;, &quot;audit the skill&quot;.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>weather</name>\n    <description>Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md</location>\n  </skill>\n</available_skills>",
+      "skills": [
+        {
+          "name": "clawflow"
+        },
+        {
+          "name": "clawflow-inbox-triage"
+        },
+        {
+          "name": "coding-agent",
+          "requiredEnv": []
+        },
+        {
+          "name": "healthcheck"
+        },
+        {
+          "name": "mcporter",
+          "requiredEnv": []
+        },
+        {
+          "name": "node-connect"
+        },
+        {
+          "name": "skill-creator"
+        },
+        {
+          "name": "weather",
+          "requiredEnv": []
+        }
+      ],
+      "resolvedSkills": [
+        {
+          "name": "clawflow",
+          "description": "Use when work should span one or more detached tasks but still behave like one job with a single owner context. ClawFlow is the runtime substrate under authoring layers like Lobster, acpx, or plain code. Keep conditional logic in the caller; use ClawFlow for flow identity, waiting, outputs, and user-facing emergence.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "clawflow-inbox-triage",
+          "description": "Example ClawFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "coding-agent",
+          "description": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:\"acp\"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "healthcheck",
+          "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "mcporter",
+          "description": "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "node-connect",
+          "description": "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "skill-creator",
+          "description": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like \"create a skill\", \"author a skill\", \"tidy up a skill\", \"improve this skill\", \"review the skill\", \"clean up the skill\", \"audit the skill\".",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "weather",
+          "description": "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather"
+          },
+          "disableModelInvocation": false
+        }
+      ],
+      "version": 0
+    },
+    "sessionFile": "C:\\Users\\cvetanichin\\.openclaw\\agents\\main\\sessions\\3a4ea81e-6054-4b9d-803d-36df3e8795ae.jsonl",
+    "status": "failed",
+    "startedAt": 1775423721033,
+    "endedAt": 1775423722171,
+    "runtimeMs": 1138,
+    "abortedLastRun": false
+  },
+  "agent:main:openai:8aebba24-ac6d-4699-93b4-adf6b1040208": {
+    "sessionId": "6650d8ea-34c5-4a0c-b582-fa8ab950c94d",
+    "updatedAt": 1775468075193,
+    "skillsSnapshot": {
+      "prompt": "\n\nThe following skills provide specialized instructions for specific tasks.\nUse the read tool to load a skill's file when the task matches its description.\nWhen a skill file references a relative path, resolve it against the skill directory (parent of SKILL.md / dirname of the path) and use that absolute path in tool commands.\n\n<available_skills>\n  <skill>\n    <name>clawflow</name>\n    <description>Use when work should span one or more detached tasks but still behave like one job with a single owner context. ClawFlow is the runtime substrate under authoring layers like Lobster, acpx, or plain code. Keep conditional logic in the caller; use ClawFlow for flow identity, waiting, outputs, and user-facing emergence.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>clawflow-inbox-triage</name>\n    <description>Example ClawFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>coding-agent</name>\n    <description>Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:&quot;acp&quot;), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>gh-issues</name>\n    <description>Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>github</name>\n    <description>GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>healthcheck</name>\n    <description>Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>mcporter</name>\n    <description>Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>node-connect</name>\n    <description>Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-creator</name>\n    <description>Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like &quot;create a skill&quot;, &quot;author a skill&quot;, &quot;tidy up a skill&quot;, &quot;improve this skill&quot;, &quot;review the skill&quot;, &quot;clean up the skill&quot;, &quot;audit the skill&quot;.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md</location>\n  </skill>\n  <skill>\n    <name>weather</name>\n    <description>Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.</description>\n    <location>~/AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md</location>\n  </skill>\n</available_skills>",
+      "skills": [
+        {
+          "name": "clawflow"
+        },
+        {
+          "name": "clawflow-inbox-triage"
+        },
+        {
+          "name": "coding-agent",
+          "requiredEnv": []
+        },
+        {
+          "name": "gh-issues",
+          "primaryEnv": "GH_TOKEN",
+          "requiredEnv": []
+        },
+        {
+          "name": "github",
+          "requiredEnv": []
+        },
+        {
+          "name": "healthcheck"
+        },
+        {
+          "name": "mcporter",
+          "requiredEnv": []
+        },
+        {
+          "name": "node-connect"
+        },
+        {
+          "name": "skill-creator"
+        },
+        {
+          "name": "weather",
+          "requiredEnv": []
+        }
+      ],
+      "resolvedSkills": [
+        {
+          "name": "clawflow",
+          "description": "Use when work should span one or more detached tasks but still behave like one job with a single owner context. ClawFlow is the runtime substrate under authoring layers like Lobster, acpx, or plain code. Keep conditional logic in the caller; use ClawFlow for flow identity, waiting, outputs, and user-facing emergence.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "clawflow-inbox-triage",
+          "description": "Example ClawFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\clawflow-inbox-triage"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "coding-agent",
+          "description": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:\"acp\"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\coding-agent"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "gh-issues",
+          "description": "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\gh-issues"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "github",
+          "description": "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\github"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "healthcheck",
+          "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\healthcheck"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "mcporter",
+          "description": "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\mcporter"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "node-connect",
+          "description": "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\node-connect"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "skill-creator",
+          "description": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like \"create a skill\", \"author a skill\", \"tidy up a skill\", \"improve this skill\", \"review the skill\", \"clean up the skill\", \"audit the skill\".",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\skill-creator"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "weather",
+          "description": "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.",
+          "filePath": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md",
+          "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather\\SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "C:\\Users\\cvetanichin\\AppData\\Roaming\\npm\\node_modules\\openclaw\\skills\\weather"
+          },
+          "disableModelInvocation": false
+        }
+      ],
+      "version": 0
+    },
+    "sessionFile": "C:\\Users\\cvetanichin\\.openclaw\\agents\\main\\sessions\\6650d8ea-34c5-4a0c-b582-fa8ab950c94d.jsonl",
+    "status": "failed",
+    "startedAt": 1775468067556,
+    "abortedLastRun": false,
+    "systemSent": true,
+    "chatType": "direct",
+    "deliveryContext": {
+      "channel": "webchat"
+    },
+    "lastChannel": "webchat",
+    "origin": {
+      "provider": "webchat",
+      "surface": "webchat",
+      "chatType": "direct"
+    },
+    "endedAt": 1775468069763,
+    "runtimeMs": 2207
   }
 }
